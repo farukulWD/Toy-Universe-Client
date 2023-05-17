@@ -1,11 +1,14 @@
 import React from 'react';
 import Menubar from '../../Component/Menubar/Menubar';
+import { Outlet } from 'react-router';
+import Footer from '../../Component/Footer/Footer';
 
 const Main = () => {
     return (
-        <div className='max-w-[1280px] mx-auto'>
+        <div className='max-w-[1300px] mx-auto'>
             <Menubar></Menubar>
-            <h2>This is main layout</h2>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
