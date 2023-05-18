@@ -4,29 +4,53 @@ import logo from "../../../src/assets/carLogo.png";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Menubar = () => {
+  const [isHover, setIsHover] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
-    const {user}=useContext(AuthContext)
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleOver = () => {
+    setIsHover(true);
+  };
+  const handleOut = () => {
+    setIsHover(false);
+  };
+
   const MenuItem = () => {
     return (
       <>
         <li>
-          <Link className= " hover:border-b-2 ">Home</Link>
+          <Link className=" hover:border-b-2 ">Home</Link>
         </li>
         <li>
-          <Link className= " hover:border-b-2 ">All Toys</Link>
+          <Link className=" hover:border-b-2 ">All Toys</Link>
         </li>
         <li>
-          <Link className= " hover:border-b-2 ">Blogs</Link>
+          <Link className=" hover:border-b-2 ">Blogs</Link>
         </li>
-        {user&&<> <li>
-          <Link className= " hover:border-b-2 ">My Toys</Link>
-        </li>
-        <li>
-          <Link className= " hover:border-b-2 ">Add A Toy</Link>
-        </li></>}
+        {user && (
+          <>
+            {" "}
+            <li>
+              <Link className=" hover:border-b-2 ">My Toys</Link>
+            </li>
+            <li>
+              <Link className=" hover:border-b-2 ">Add A Toy</Link>
+            </li>
+          </>
+        )}
       </>
     );
   };
+
   return (
     <div className="navbar bg-[#ccf7ff] my-5">
       <div className="navbar-start">
@@ -65,8 +89,24 @@ const Menubar = () => {
           <MenuItem></MenuItem>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="">Profile</a>
+      <div className="navbar-end relative mr-5">
+        {user ? (
+          <>
+            <div>
+            <img onMouseOver={handleOver} onMouseOut={handleOut} className="h-10 w-10 rounded-full mr-5" src={user?.photoURL} alt="" />
+
+            
+              {
+                isHover ? <p className="text-black absolute top-13 right-15 bg-base-200 py-2 px-2 ">{user&&user.displayName}</p>:""
+
+              }
+            
+            </div>
+            <Link onClick={handleSignOut}>Log Out</Link>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </div>
     </div>
   );

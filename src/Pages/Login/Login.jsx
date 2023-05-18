@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState("Error");
-  const { createUser } = useContext(AuthContext);
+  const { loginUser,googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -12,11 +14,22 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    createUser(email, password)
+    loginUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        navigate("/");
       })
       .catch((error) => console.log(error.message));
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -55,6 +68,12 @@ const Login = () => {
               <label className="label">
                 <span className="label-text text-red-600">{error}</span>
               </label>
+              <p className="my-2">
+                New to Toy universe ?{" "}
+                <Link to="/register" className="">
+                  Register
+                </Link>
+              </p>
 
               <div className="form-control mt-6">
                 <input
@@ -68,7 +87,7 @@ const Login = () => {
                 <p>Or</p>
                 <p>Login with</p>
                 <div className="text-3xl my-2">
-                  <button>
+                  <button onClick={handleGoogleLogin}>
                     <FcGoogle></FcGoogle>
                   </button>
                 </div>

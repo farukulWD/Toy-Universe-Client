@@ -1,8 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Register = () => {
+  const { createUser,googleLogin } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createUser);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="my-5">
       <div className="hero md:min-h-screen bg-[#ccf7ff]">
@@ -11,7 +42,7 @@ const Register = () => {
             <h1 className="text-5xl font-bold">Register</h1>
           </div>
           <div className="card w-full  md:w-[500px]  shadow-2xl bg-base-100">
-            <div className="card-body">
+            <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -39,7 +70,7 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
@@ -56,24 +87,29 @@ const Register = () => {
                   className="input input-bordered"
                 />
                 <p className="my-2">
-                 Already You Have an account ? <Link to="/login" className="">
+                  Already You Have an account ?{" "}
+                  <Link to="/login" className="">
                     Login
                   </Link>
                 </p>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <input
+                  className="btn btn-primary"
+                  type="submit"
+                  value="Register"
+                />
               </div>
               <div className="text-center">
                 <p>Or</p>
                 <p>Login with</p>
                 <div className="text-3xl my-2">
-                    <button>
-                        <FcGoogle></FcGoogle>
-                    </button>
+                  <button onClick={handleGoogleLogin}>
+                    <FcGoogle></FcGoogle>
+                  </button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
