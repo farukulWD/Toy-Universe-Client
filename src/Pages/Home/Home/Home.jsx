@@ -86,7 +86,7 @@ const Home = () => {
             </TabList>
             {/* <TabPanel>{tabIndex}</TabPanel> */}
           </Tabs>
-          <div className="grid grid-cols-2 gap-6 mx-auto">
+          <div className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto">
             {
                 products.map(product =><TabCard product={product}></TabCard>)
             }

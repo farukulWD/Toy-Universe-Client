@@ -11,7 +11,7 @@
 },
 
 {
-  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Hot_Wheels_2005_Corvette_C6R_%28Front%29.jpg/1200px-Hot_Wheels_2005_Corvette_C6R_%28Front%29.jpg",
+  "picture_url": "https://m.media-amazon.com/images/I/61Q9ngGD5WL.jpg",
   "name": "Hot Wheels Corvette C6R",
   "seller_name": "Walmart",
   "seller_email": "walmart@walmart.com",
@@ -23,9 +23,9 @@
 },
 
 {
-  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lamborghini_Aventador_SVJ_Roadster_2019_%281%29.jpg/1200px-Lamborghini_Aventador_SVJ_Roadster_2019_%281%29.jpg",
-  "name": "Lamborghini Aventador SVJ Roadster",
+  "picture_url": "https://m.media-amazon.com/images/I/61Q9ngGD5WL.jpg",
   "seller_name": "Amazon",
+  "name": "Tesla Model S Plaid",
   "seller_email": "amazon@amazon.com",
   "sub_category": "Cars",
   "price": 500.00,
@@ -35,7 +35,7 @@
 },
 
 {
-  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tesla_Model_S_Plaid_%28rear%29.jpg/1200px-Tesla_Model_S_Plaid_%28rear%29.jpg",
+  "picture_url": "https://m.media-amazon.com/images/I/61Q9ngGD5WL.jpg",
   "name": "Tesla Model S Plaid",
   "seller_name": "Tesla",
   "seller_email": "tesla@tesla.com",

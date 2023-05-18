@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/carLogo.png";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Menubar = () => {
 
-    const [user,setUser]=useState(true)
+    const {user}=useContext(AuthContext)
   const MenuItem = () => {
     return (
       <>
