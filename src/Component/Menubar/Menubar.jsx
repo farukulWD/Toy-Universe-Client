@@ -31,7 +31,7 @@ const Menubar = () => {
           <Link className=" hover:border-b-2 ">Home</Link>
         </li>
         <li>
-          <Link className=" hover:border-b-2 ">All Toys</Link>
+          <Link to="/allToy" className=" hover:border-b-2 ">All Toys</Link>
         </li>
         <li>
           <Link className=" hover:border-b-2 ">Blogs</Link>
@@ -93,14 +93,21 @@ const Menubar = () => {
         {user ? (
           <>
             <div>
-            <img onMouseOver={handleOver} onMouseOut={handleOut} className="h-10 w-10 rounded-full mr-5" src={user?.photoURL} alt="" />
+              <img
+                onMouseOver={handleOver}
+                onMouseOut={handleOut}
+                className="h-10 w-10 rounded-full mr-5"
+                src={user?.photoURL}
+                alt=""
+              />
 
-            
-              {
-                isHover ? <p className="text-black absolute top-13 right-15 bg-base-200 py-2 px-2 ">{user&&user.displayName}</p>:""
-
-              }
-            
+              {isHover ? (
+                <p className="text-black absolute top-13 right-15 bg-base-200 py-2 px-2 ">
+                  {user && user.displayName}
+                </p>
+              ) : (
+                ""
+              )}
             </div>
             <Link onClick={handleSignOut}>Log Out</Link>
           </>
