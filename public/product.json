@@ -1,0 +1,47 @@
+[{
+  "picture_url": "https://m.media-amazon.com/images/I/61Q9ngGD5WL.jpg",
+  "name": "Matchbox Red Car",
+  "seller_name": "Toys R Us",
+  "seller_email": "toysrus@toysrus.com",
+  "sub_category": "Cars",
+  "price": 5.99,
+  "rating": 4.5,
+  "available_quantity": 10,
+  "detail_description": "This classic red car is perfect for any child's collection. It's made of durable metal and features rolling wheels. The car is also easy to grip, making it ideal for small hands. This car is sure to provide hours of fun for children of all ages."
+},
+
+{
+  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Hot_Wheels_2005_Corvette_C6R_%28Front%29.jpg/1200px-Hot_Wheels_2005_Corvette_C6R_%28Front%29.jpg",
+  "name": "Hot Wheels Corvette C6R",
+  "seller_name": "Walmart",
+  "seller_email": "walmart@walmart.com",
+  "sub_category": "Cars",
+  "price": 7.99,
+  "rating": 4.2,
+  "available_quantity": 5,
+  "detail_description": "This Hot Wheels Corvette C6R is a must-have for any car enthusiast. It's made of durable die-cast metal and features realistic details. The car also features rolling wheels and a working spoiler. This car is sure to provide hours of fun for children of all ages."
+},
+
+{
+  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lamborghini_Aventador_SVJ_Roadster_2019_%281%29.jpg/1200px-Lamborghini_Aventador_SVJ_Roadster_2019_%281%29.jpg",
+  "name": "Lamborghini Aventador SVJ Roadster",
+  "seller_name": "Amazon",
+  "seller_email": "amazon@amazon.com",
+  "sub_category": "Cars",
+  "price": 500.00,
+  "rating": 5.0,
+  "available_quantity": 1,
+  "detail_description": "This Lamborghini Vendor SVJ Roadster is a dream come true for any car enthusiast. It's made of carbon fiber and features a powerful V12 engine. The car also features a removable roof, making it perfect for cruising on a sunny day. This car is sure to turn heads wherever you go."
+},
+
+{
+  "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tesla_Model_S_Plaid_%28rear%29.jpg/1200px-Tesla_Model_S_Plaid_%28rear%29.jpg",
+  "name": "Tesla Model S Plaid",
+  "seller_name": "Tesla",
+  "seller_email": "tesla@tesla.com",
+  "sub_category": "Cars",
+  "price": 129,
+  "rating": 4.9,
+  "available_quantity": 10,
+  "detail_description": "This Tesla Model S Plaid is the fastest production car in the world. It can go from 0 to 60 mph in just 1.99 seconds. The car also features a long-range battery that can go up to 390 miles on a single charge. This car is sure to turn heads wherever you go."
+}]
