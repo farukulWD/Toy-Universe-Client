@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllToyRow = ({toy}) => {
     const {_id,seller_name,name,sub_category,price,available_quantity}=toy
@@ -8,8 +9,8 @@ const AllToyRow = ({toy}) => {
       <td>{name}</td>
       <td>{sub_category}</td>
       <td>${price}</td>
-      <td>{available_quantity}</td>
-      <td><button>view details</button></td>
+      <td className="text-center">{available_quantity}pcs</td>
+      <td><Link to={`/toyDetails/${_id}`}>view details</Link></td>
     </tr>
   );
 };

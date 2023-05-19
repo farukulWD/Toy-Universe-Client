@@ -2,7 +2,6 @@ import React from "react";
 
 const TabCard = ({ product }) => {
   const { name, picture, price, rating } = product;
-  console.log(picture);
   return (
     <div className="card card-compact w-full  shadow-xl">
       <figure>

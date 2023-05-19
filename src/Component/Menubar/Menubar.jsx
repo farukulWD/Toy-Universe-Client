@@ -81,7 +81,7 @@ const Menubar = () => {
 
         <div className="flex items-center">
           <img className="w-16 h-16 rounded-md" src={logo} alt="logo" />
-          <a className="text-xl font-bold">Toy Universe</a>
+          <a className="text-xl font-bold hidden md:block">Toy Universe</a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

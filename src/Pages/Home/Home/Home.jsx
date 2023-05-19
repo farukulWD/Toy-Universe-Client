@@ -8,19 +8,22 @@ import TabCard from "./TabCard";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [tabValue, setTabValue] = useState("");
+  const [tabValue, setTabValue] = useState("all");
   const [products,setProduct] = useState([]);
 
 
   const handleSelect = (index) => {
     setTabIndex(index)
     if (index === 0) {
-      setTabValue("sports car");
-      return;
-    } else if (index === 1) {
-      setTabValue("truck");
+      setTabValue("all")
+    }
+    else if (index === 1) {
+      setTabValue("mini fire truck");
       return;
     } else if (index === 2) {
+      setTabValue("truck");
+      return;
+    } else if (index === 3) {
       setTabValue("mini police car");
       return;
     }
@@ -28,10 +31,13 @@ const Home = () => {
 
 
   useEffect(()=>{
-    fetch("http://localhost:5000/alltoy")
+    fetch(`http://localhost:5000/getJobByCategory/${tabValue}`)
     .then(res=> res.json())
-    .then(data=> setProduct(data))
-  },[])
+    .then(data=> {
+      setProduct(data)
+    })
+  },[tabValue])
+  
 
   return (
     <div>
@@ -80,7 +86,8 @@ const Home = () => {
             onSelect={(index) => handleSelect(index)}
           >
             <TabList>
-              <Tab>sports car</Tab>
+              <Tab>All</Tab>
+              <Tab>mini fire truck</Tab>
               <Tab>truck</Tab>
               <Tab>mini police car</Tab>
             </TabList>

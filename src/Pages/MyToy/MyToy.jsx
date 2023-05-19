@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MyAllToyRow from "./MyAllToyRow";
 import banner from "../../assets/alltoyBanner.jpg"
+import { AuthContext } from "../../Context/AuthProvider";
 const MyToy = () => {
+  const {user}=useContext(AuthContext)
     const [myAllToy, setMyAllToy] = useState([]);
 
   useEffect(() => {
-    fetch("product.json")
+    fetch(`http://localhost:5000/myCar/${user&&user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyAllToy(data);

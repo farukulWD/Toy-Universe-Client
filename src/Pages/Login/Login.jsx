@@ -1,23 +1,27 @@
 import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const location = useLocation()
   const [error, setError] = useState("Error");
   const { loginUser,googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname ||'/';
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+  
+
+
     loginUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        navigate("/");
+        navigate(from);
       })
       .catch((error) => console.log(error.message));
   };
@@ -26,6 +30,7 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
+        navigate(from);
       })
       .catch((error) => {
         console.log(error.message);

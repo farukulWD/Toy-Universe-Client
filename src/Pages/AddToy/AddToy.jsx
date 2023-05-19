@@ -4,7 +4,6 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-  const [toyData,setToyData]=useState({});
 
   const {
     register,
@@ -12,21 +11,19 @@ const AddToy = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => setToyData(data);
-
-  const handleAddToy=()=>{
-    fetch("http://localhost:5000/addtoy",{
-      method:"POST",
-      headers:{
-        "content-type":"application/json"
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/addtoy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(toyData&&toyData)
+      body: JSON.stringify(data),
     })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
-  }
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
 
-console.log(toyData);
+  
   return (
     <div className="hero py-5 md:min-h-screen bg-[#ccf7ff]">
       <div className="hero-content flex-col">
@@ -35,7 +32,6 @@ console.log(toyData);
           <div className="card-body">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
-
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Toy picture</span>
@@ -59,9 +55,9 @@ console.log(toyData);
                   <input
                     className="input input-bordered"
                     placeholder="Toy Name"
-                    {...register("Name", { required: true })}
+                    {...register("name", { required: true })}
                   />
-                  {errors.Name && (
+                  {errors.name && (
                     <span className="text-red-600">Provide Toy Name</span>
                   )}
                 </div>
@@ -135,7 +131,7 @@ console.log(toyData);
                       <input
                         className="input w-full input-bordered"
                         placeholder="Rating"
-                        {...register("Rating", { required: true })}
+                        {...register("rating", { required: true })}
                       />
                     </div>
                   </div>
@@ -153,12 +149,10 @@ console.log(toyData);
                   <input
                     className="input input-bordered"
                     placeholder="Available quantity"
-                    {...register("Available_quantity", { required: true })}
+                    {...register("available_quantity", { required: true })}
                   />
-                  {errors.Available_quantity && (
-                    <span className="text-red-600">
-                      Provide Toy Quantity
-                    </span>
+                  {errors.available_quantity && (
+                    <span className="text-red-600">Provide Toy Quantity</span>
                   )}
                 </div>
 
@@ -178,10 +172,8 @@ console.log(toyData);
                   )}
                 </div>
 
-
-
                 <div className="form-control mt-6">
-                  <input onClick={handleAddToy}
+                  <input
                     className="btn btn-primary"
                     type="submit"
                     value="Add Toy"
