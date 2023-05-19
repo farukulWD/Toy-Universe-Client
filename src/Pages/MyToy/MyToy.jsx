@@ -8,7 +8,7 @@ const MyToy = () => {
     const [control,setControl]=useState(false)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myCar/${user&&user.email}`)
+    fetch(`https://the-toy-universe-server.vercel.app/myCar/${user&&user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyAllToy(data);

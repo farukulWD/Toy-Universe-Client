@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Update = () => {
   const toy = useLoaderData();
@@ -15,7 +16,7 @@ const Update = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/", {
+    fetch(`https://the-toy-universe-server.vercel.app/update/${toy._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -24,7 +25,7 @@ const Update = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result.acknowledged) {
+        if (result.modifiedCount>0) {
           Swal.fire({
             icon: "success",
             title: "Success",

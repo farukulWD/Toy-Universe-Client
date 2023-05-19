@@ -32,7 +32,7 @@ const Home = () => {
 
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/getJobByCategory/${tabValue}`)
+    fetch(`https://the-toy-universe-server.vercel.app/getJobByCategory/${tabValue}`)
     .then(res=> res.json())
     .then(data=> {
       setProduct(data)

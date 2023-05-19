@@ -42,12 +42,12 @@ const router = createBrowserRouter([
       {
         path:"/toyDetails/:id",
         element:<PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader:({params})=> fetch(`https://the-toy-universe-server.vercel.app/singleToy/${params.id}`)
       },
       {
         path:"/update/:id",
         element:<PrivetRoute><Update></Update></PrivetRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader:({params})=>fetch(`https://the-toy-universe-server.vercel.app/singleToy/${params.id}`)
       }
     ],
   },
