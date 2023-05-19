@@ -28,7 +28,7 @@ const Home = () => {
 
 
   useEffect(()=>{
-    fetch("product.json")
+    fetch("http://localhost:5000/alltoy")
     .then(res=> res.json())
     .then(data=> setProduct(data))
   },[])

@@ -1,12 +1,12 @@
 import React from "react";
 
 const TabCard = ({ product }) => {
-  const { name, picture_url, price, rating } = product;
-  console.log(picture_url);
+  const { name, picture, price, rating } = product;
+  console.log(picture);
   return (
     <div className="card card-compact w-full  shadow-xl">
       <figure>
-        <img src={picture_url} alt="Shoes" />
+        <img src={picture} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

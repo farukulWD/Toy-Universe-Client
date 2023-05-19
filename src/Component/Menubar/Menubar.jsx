@@ -40,10 +40,10 @@ const Menubar = () => {
           <>
             {" "}
             <li>
-              <Link className=" hover:border-b-2 ">My Toys</Link>
+              <Link to="/myToy" className=" hover:border-b-2 ">My Toys</Link>
             </li>
             <li>
-              <Link className=" hover:border-b-2 ">Add A Toy</Link>
+              <Link to="/addToy" className=" hover:border-b-2 ">Add A Toy</Link>
             </li>
           </>
         )}

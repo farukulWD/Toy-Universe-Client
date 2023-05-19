@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import banner from "../../../src/assets/alltoyBanner.jpg";
-import {AllToyRow} from "./AllToyRow";
+import { AllToyRow } from "./AllToyRow";
 
 const AllToy = () => {
+  const [allToy, setAllToy] = useState([]);
 
-
-    const [allToy,setAllToy]=useState([])
-
-    useEffect(()=>{
-        fetch("product.json")
-        .then(res=>res.json())
-        .then(data=>{
-            setAllToy(data)
-        })
-    },[])
+  useEffect(() => {
+    fetch("http://localhost:5000/alltoy")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllToy(data);
+      });
+  }, []);
   return (
     <>
       <div className="hero mb-10">
@@ -36,10 +34,9 @@ const AllToy = () => {
             </tr>
           </thead>
           <tbody>
-            
-            {
-                allToy.map((toy,index)=><AllToyRow key={index} toy={toy}></AllToyRow>)
-            }
+            {allToy.map((toy, index) => (
+              <AllToyRow key={index} toy={toy}></AllToyRow>
+            ))}
           </tbody>
         </table>
       </div>
@@ -47,4 +44,4 @@ const AllToy = () => {
   );
 };
 
-export {AllToy};
+export { AllToy };
