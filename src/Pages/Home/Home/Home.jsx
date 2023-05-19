@@ -86,7 +86,7 @@ const Home = () => {
             selectedIndex={tabIndex}
             onSelect={(index) => handleSelect(index)}
           >
-            <TabList>
+            <TabList className="font-semibold">
               <Tab>All</Tab>
               <Tab>mini fire truck</Tab>
               <Tab>truck</Tab>

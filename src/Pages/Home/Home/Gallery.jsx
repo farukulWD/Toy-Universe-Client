@@ -31,7 +31,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
+                src="https://i.ibb.co/kmH9xwM/truck.png"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
+                src="https://i.ibb.co/nMXpnRy/truck.webp"
               />
             </div>
           </div>
@@ -49,7 +49,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp"
+                src="https://i.ibb.co/gMw5hmr/ambulance.png"
               />
             </div>
           </div>
@@ -58,7 +58,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
+                src="https://i.ibb.co/ZL0PG7n/62451a4a11b5728e6c7f9e09-E511-toy-rc-excavator.png"
               />
             </div>
           </div>
