@@ -1,20 +1,40 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const MyAllToyRow = ({ myToy,control,setControl}) => {
+const MyAllToyRow = ({ myToy, control, setControl }) => {
   const { _id, seller_name, name, sub_category, price, available_quantity } =
     myToy;
 
-    const handleDelete = (id) => {
-      fetch(`http://localhost:5000/myCar/${id}`, {
-        method: "Delete",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setControl(!control)
-        });
-    };
-  
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myCar/${id}`, {
+          method: "Delete",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount>0) {
+              Swal.fire(
+                'Deleted!',
+                'Your Toy has been deleted.',
+                'success'
+              )
+            }
+            setControl(!control);
+          });
+      }
+    });
+  };
 
   return (
     <tr>
@@ -24,10 +44,10 @@ const MyAllToyRow = ({ myToy,control,setControl}) => {
       <td>${price}</td>
       <td>{available_quantity}</td>
       <td>
-        <button>Update</button>
+        <Link to={`/update/${_id}`}>Update</Link>
       </td>
       <td>
-        <button onClick={()=>handleDelete(_id)}>Delete</button>
+        <button onClick={() => handleDelete(_id)}>Delete</button>
       </td>
     </tr>
   );

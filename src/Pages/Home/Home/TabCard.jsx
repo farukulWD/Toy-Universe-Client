@@ -6,7 +6,7 @@ const TabCard = ({ product }) => {
   return (
     <div className="card card-compact w-full  shadow-xl">
       <figure>
-        <img src={picture} alt="Shoes" />
+        <img className="h-72" src={picture} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

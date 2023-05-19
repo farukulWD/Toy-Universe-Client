@@ -13,7 +13,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                src="https://i.ibb.co/WKvXWJ4/1-2019-06-12-122601-2019-07-10-130211.jpg"
               />
             </div>
           </div>
@@ -22,7 +22,7 @@ const Gallery = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+                src="https://i.ibb.co/ZxWPsPG/4006333074639-imageoutofpack.png"
               />
             </div>
           </div>

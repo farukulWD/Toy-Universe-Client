@@ -6,6 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabCard from "./TabCard";
 
+
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabValue, setTabValue] = useState("all");
@@ -104,6 +105,7 @@ const Home = () => {
         </div>
       </div>
       {/* Shop by category end */}
+      
     </div>
   );
 };

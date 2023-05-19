@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -20,10 +21,18 @@ const AddToy = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        if (result.acknowledged) {
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Toy added has been successful",
+          });
+        }
+        console.log(result);
+      });
   };
 
-  
   return (
     <div className="hero py-5 md:min-h-screen bg-[#ccf7ff]">
       <div className="hero-content flex-col">
