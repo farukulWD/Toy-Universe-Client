@@ -91,11 +91,14 @@ const Home = () => {
               <Tab>truck</Tab>
               <Tab>mini police car</Tab>
             </TabList>
-            {/* <TabPanel>{tabIndex}</TabPanel> */}
+            <TabPanel></TabPanel>
+            <TabPanel></TabPanel>
+            <TabPanel></TabPanel>
+            <TabPanel></TabPanel>
           </Tabs>
           <div className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto">
             {
-                products.map(product =><TabCard product={product}></TabCard>)
+                products.map(product =><TabCard key={product._id} product={product}></TabCard>)
             }
           </div>
         </div>

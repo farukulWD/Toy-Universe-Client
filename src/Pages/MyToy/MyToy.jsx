@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 const MyToy = () => {
   const {user}=useContext(AuthContext)
     const [myAllToy, setMyAllToy] = useState([]);
+    const [control,setControl]=useState(false)
 
   useEffect(() => {
     fetch(`http://localhost:5000/myCar/${user&&user.email}`)
@@ -12,7 +13,7 @@ const MyToy = () => {
       .then((data) => {
         setMyAllToy(data);
       });
-  }, []);
+  }, [control]);
   return (
     <>
       <div className="hero mb-10">
@@ -37,7 +38,7 @@ const MyToy = () => {
           </thead>
           <tbody>
             {myAllToy.map((myToy) => (
-              <MyAllToyRow  myToy={myToy}></MyAllToyRow>
+              <MyAllToyRow key={myToy._id}  myToy={myToy}  control={control} setControl={setControl}></MyAllToyRow>
             ))}
           </tbody>
         </table>

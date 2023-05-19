@@ -4,6 +4,7 @@ import { AllToyRow } from "./AllToyRow";
 
 const AllToy = () => {
   const [allToy, setAllToy] = useState([]);
+  
 
   useEffect(() => {
     fetch("http://localhost:5000/alltoy")
@@ -12,6 +13,8 @@ const AllToy = () => {
         setAllToy(data);
       });
   }, []);
+
+  
   return (
     <>
       <div className="hero mb-10">
@@ -34,8 +37,8 @@ const AllToy = () => {
             </tr>
           </thead>
           <tbody>
-            {allToy.map((toy, index) => (
-              <AllToyRow key={index} toy={toy}></AllToyRow>
+            {allToy.map((toy) => (
+              <AllToyRow key={toy._id}  toy={toy}></AllToyRow>
             ))}
           </tbody>
         </table>

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TabCard = ({ product }) => {
-  const { name, picture, price, rating } = product;
+  const { _id, name, picture, price, rating } = product;
   return (
     <div className="card card-compact w-full  shadow-xl">
       <figure>
@@ -15,7 +16,7 @@ const TabCard = ({ product }) => {
             <p>Rating: {rating}</p>
           </div>
           <div>
-            <button className="btn border-none  text-black hover:bg-[#ccf7ff] bg-transparent">View Details</button>
+            <Link to={`/toyDetails/${_id}`} className="btn border-none  text-black hover:bg-[#ccf7ff] bg-transparent">View Details</Link>
           </div>
         </div>
       </div>

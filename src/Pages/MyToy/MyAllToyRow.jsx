@@ -1,8 +1,21 @@
 import React from "react";
 
-const MyAllToyRow = ({ myToy }) => {
-  const { _id, seller_name, name, sub_category, price, available_quantity} = myToy;
-    console.log(available_quantity);
+const MyAllToyRow = ({ myToy,control,setControl}) => {
+  const { _id, seller_name, name, sub_category, price, available_quantity } =
+    myToy;
+
+    const handleDelete = (id) => {
+      fetch(`http://localhost:5000/myCar/${id}`, {
+        method: "Delete",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setControl(!control)
+        });
+    };
+  
+
   return (
     <tr>
       <td>{seller_name}</td>
@@ -14,7 +27,7 @@ const MyAllToyRow = ({ myToy }) => {
         <button>Update</button>
       </td>
       <td>
-        <button>Delete</button>
+        <button onClick={()=>handleDelete(_id)}>Delete</button>
       </td>
     </tr>
   );
