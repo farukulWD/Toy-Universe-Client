@@ -34,7 +34,7 @@ const Menubar = () => {
           <Link to="/allToy" className=" hover:border-b-2 ">All Toys</Link>
         </li>
         <li>
-          <Link className=" hover:border-b-2 ">Blogs</Link>
+          <Link to='/blog' className=" hover:border-b-2 ">Blogs</Link>
         </li>
         {user && (
           <>

@@ -5,26 +5,24 @@ import Gallery from "./Gallery";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabCard from "./TabCard";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabValue, setTabValue] = useState("all");
-  const [products,setProduct] = useState([]);
+  const [products, setProduct] = useState([]);
 
   useEffect(() => {
     AOS.init();
-  }, [])
-
+  }, []);
 
   const handleSelect = (index) => {
-    setTabIndex(index)
+    setTabIndex(index);
     if (index === 0) {
-      setTabValue("all")
-    }
-    else if (index === 1) {
+      setTabValue("all");
+    } else if (index === 1) {
       setTabValue("mini fire truck");
       return;
     } else if (index === 2) {
@@ -36,19 +34,18 @@ const Home = () => {
     }
   };
 
-
-  useEffect(()=>{
-    fetch(`https://the-toy-universe-server.vercel.app/getJobByCategory/${tabValue}`)
-    .then(res=> res.json())
-    .then(data=> {
-      setProduct(data)
-    })
-  },[tabValue])
-  
+  useEffect(() => {
+    fetch(
+      `https://the-toy-universe-server.vercel.app/getJobByCategory/${tabValue}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
+  }, [tabValue]);
 
   return (
     <div>
-
       {/* banner section start*/}
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
@@ -83,10 +80,16 @@ const Home = () => {
 
       {/* Shop by category start */}
       <div className="my-10">
-        <h2 className="text-4xl my-10 font-bold text-center">
+        
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="lg:text-4xl text-3xl font-bold text-center text-gray-800">
           Shop by category
-        </h2>
-        <hr className="border-y-2 w-52 mb-10 mx-auto border-[#fdc600]" />
+          </h1>
+          <p className="text-base leading-6 mt-4 text-center text-gray-600 2xl:w-2/5 ">
+            Here is why you should trust us with your work achievements
+          </p>
+        </div>
+        <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#fdc600]" />
         <div className="text-center">
           <Tabs
             selectedIndex={tabIndex}
@@ -103,15 +106,22 @@ const Home = () => {
             <TabPanel></TabPanel>
             <TabPanel></TabPanel>
           </Tabs>
-          <div data-aos="zoom-in" className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto">
-            {
-                products.map(product =><TabCard key={product._id} product={product}></TabCard>)
-            }
+          <div
+            data-aos="zoom-in"
+            className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto"
+          >
+            {products.map((product) => (
+              <TabCard key={product._id} product={product}></TabCard>
+            ))}
           </div>
         </div>
       </div>
       {/* Shop by category end */}
-      
+
+      {/* Testimonial section  */}
+      <div data-aos="zoom-in">
+        <Testimonial></Testimonial>
+      </div>
     </div>
   );
 };
