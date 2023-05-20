@@ -8,11 +8,13 @@ import TabCard from "./TabCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Testimonial from "./Testimonial";
+import useTitle from "../../../Component/Hook/UseTitle";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabValue, setTabValue] = useState("all");
   const [products, setProduct] = useState([]);
+  useTitle("Home")
 
   useEffect(() => {
     AOS.init();

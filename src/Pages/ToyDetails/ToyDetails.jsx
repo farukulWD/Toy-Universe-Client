@@ -4,8 +4,10 @@ import banner from "../../../src/assets/alltoyBanner.jpg";
 // import Rating from "react-rating";
 
 import ReactStarsRating from "react-awesome-stars-rating";
+import useTitle from "../../Component/Hook/UseTitle";
 
 const ToyDetails = () => {
+  useTitle("ToyDetails")
   const toy = useLoaderData();
   const {
     _id,

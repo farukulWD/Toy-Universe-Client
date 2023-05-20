@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import MyAllToyRow from "./MyAllToyRow";
 import banner from "../../assets/alltoyBanner.jpg";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../../Component/Hook/UseTitle";
 const MyToy = () => {
+  useTitle("MyToy")
   const { user } = useContext(AuthContext);
   const [myAllToy, setMyAllToy] = useState([]);
   // const [searchText, setSearchText]=useState("")

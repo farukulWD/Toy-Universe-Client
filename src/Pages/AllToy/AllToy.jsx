@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import banner from "../../../src/assets/alltoyBanner.jpg";
 import { AllToyRow } from "./AllToyRow";
+import useTitle from "../../Component/Hook/UseTitle";
 
 const AllToy = () => {
   const [allToy, setAllToy] = useState([]);
+  useTitle("AllToy")
   
 
   useEffect(() => {

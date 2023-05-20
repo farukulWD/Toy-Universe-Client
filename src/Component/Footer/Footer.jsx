@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram,  FaLinkedin, FaSearchLocation, FaTwitter, FaYoutube } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -6,24 +9,42 @@ const Footer = () => {
       <div className="footer">
         <div>
           <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Toy Sales</a>
+          <a className="link link-hover">Gift Wrapping</a>
+          <a className="link link-hover">Toy Rental</a>
+          <a className="link link-hover">Online Shopping</a>
         </div>
         <div>
           <span className="footer-title">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to="/" className="link link-hover">
+            Home
+          </Link>
+          <Link to="/blog" className="link link-hover">
+            Blog
+          </Link>
+          <Link to="/alltoy" className="link link-hover">
+            All Toy
+          </Link>
         </div>
         <div>
-          <span className="footer-title">Social</span>
-          <div className="grid grid-flow-col gap-4"></div>
+          <span className="footer-title">Address</span>
+          <div className="grid grid-flow-col gap-4">
+           <div>
+           <p><FaSearchLocation/> Noypara,Madabpur</p>
+            <p><AiOutlineMail/> address@gmail.com</p>
+            <div className="mt-4">
+           <Link className="text-2xl"> <FaFacebook/></Link>
+           <Link className="text-2xl"> <FaTwitter/></Link>
+           <Link className="text-2xl"> <FaYoutube/></Link>
+           <Link className="text-2xl"> <FaInstagram/></Link>
+           <Link className="text-2xl"> <FaLinkedin/></Link>
+            </div>
+           </div>
+          
+          </div>
         </div>
       </div>
-      <div className="text-right mt-5">
+      <div className="text-center mt-5">
         <p>Copyright © 2023 - All right reserved by Farukul</p>
       </div>
     </footer>

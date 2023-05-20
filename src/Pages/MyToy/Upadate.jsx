@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../Component/Hook/UseTitle";
 
 const Update = () => {
   const toy = useLoaderData();
   const { user } = useContext(AuthContext);
+  useTitle("MyToy-Update")
 
   const {
     register,

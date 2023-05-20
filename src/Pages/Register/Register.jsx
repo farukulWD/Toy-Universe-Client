@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../../Component/Hook/UseTitle";
 
 const Register = () => {
+  useTitle("Register")
   const { createUser,googleLogin } = useContext(AuthContext);
 
   const handleRegister = (event) => {
