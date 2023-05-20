@@ -5,12 +5,18 @@ import Gallery from "./Gallery";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabCard from "./TabCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabValue, setTabValue] = useState("all");
   const [products,setProduct] = useState([]);
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
 
   const handleSelect = (index) => {
@@ -97,7 +103,7 @@ const Home = () => {
             <TabPanel></TabPanel>
             <TabPanel></TabPanel>
           </Tabs>
-          <div className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto">
+          <div data-aos="zoom-in" className="grid  lg:grid-cols-4 my-10 gap-6 mx-auto">
             {
                 products.map(product =><TabCard key={product._id} product={product}></TabCard>)
             }

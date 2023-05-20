@@ -13,6 +13,7 @@ const AddToy = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    data.price = Number(data.price);
     fetch("https://the-toy-universe-server.vercel.app/addtoy", {
       method: "POST",
       headers: {

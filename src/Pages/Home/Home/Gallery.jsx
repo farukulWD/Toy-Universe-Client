@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <div className="my-10">
         <h2 className="text-4xl my-10 font-bold text-center">Toys That Will Make Your Kids Smile</h2>
@@ -8,7 +14,9 @@ const Gallery = () => {
 
       <div className="container mt-10 mx-auto">
         <div className="-m-1 flex flex-wrap md:-m-2">
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"  className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"
@@ -17,7 +25,9 @@ const Gallery = () => {
               />
             </div>
           </div>
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-right"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"
@@ -26,7 +36,9 @@ const Gallery = () => {
               />
             </div>
           </div>
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"
@@ -35,7 +47,9 @@ const Gallery = () => {
               />
             </div>
           </div>
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-right"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"
@@ -44,7 +58,9 @@ const Gallery = () => {
               />
             </div>
           </div>
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"
@@ -53,7 +69,9 @@ const Gallery = () => {
               />
             </div>
           </div>
-          <div className="flex w-1/3 flex-wrap">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className="flex w-1/3 flex-wrap">
             <div className="w-full p-1 md:p-2">
               <img
                 alt="gallery"

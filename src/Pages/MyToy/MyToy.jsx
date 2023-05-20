@@ -7,16 +7,28 @@ const MyToy = () => {
   const [myAllToy, setMyAllToy] = useState([]);
   // const [searchText, setSearchText]=useState("")
   const [control, setControl] = useState(false);
+  const [selectSort,setSelectSort]=useState("");
+  
+
+
+  const handleChange=(event)=>{
+    const value = event.target.value;
+    setSelectSort(value)
+  }
+  const [value,type]=selectSort&&selectSort.split('-');
+
+  
 
   useEffect(() => {
+    
     fetch(
-      `https://the-toy-universe-server.vercel.app/myCar/${user && user.email}`
+      `https://the-toy-universe-server.vercel.app/myCar/${user && user.email}?type=${type}`
     )
       .then((res) => res.json())
       .then((data) => {
         setMyAllToy(data);
       });
-  }, [control]);
+  }, [control,selectSort]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -39,7 +51,7 @@ const MyToy = () => {
       </div>
 
       <div>
-        <div className="flex justify-center my-5">
+        <div className="flex justify-center gap-5 my-5">
           <form onSubmit={handleSearch} className="form-control">
             <div className="input-group">
               <input
@@ -66,6 +78,17 @@ const MyToy = () => {
               </button>
             </div>
           </form>
+          <div className="form-control">
+            <div className="input-group">
+              <select onChange={handleChange} className="select select-bordered">
+
+                <option>price-ascending</option>
+                <option>price-descending</option>
+                
+              </select>
+              <button className="btn btn-disabled">Sort</button>
+            </div>
+          </div>
         </div>
 
         <div className="overflow-x-auto ">

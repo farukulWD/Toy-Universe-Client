@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const TabCard = ({ product }) => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const { _id, name, picture, price, rating } = product;
   return (
-    <div className="card card-compact w-full  shadow-xl">
+    <div data-aos="fade-up" className="card card-compact w-full  shadow-xl">
       <figure>
         <img className="h-72" src={picture} alt="Shoes" />
       </figure>

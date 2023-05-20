@@ -16,6 +16,7 @@ const Update = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    data.price = Number(data.price);
     fetch(`https://the-toy-universe-server.vercel.app/update/${toy._id}`, {
       method: "PATCH",
       headers: {
