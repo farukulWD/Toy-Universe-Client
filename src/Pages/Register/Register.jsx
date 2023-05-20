@@ -1,29 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "../../Component/Hook/UseTitle";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  useTitle("Register")
-  const { createUser,googleLogin } = useContext(AuthContext);
+  useTitle("Register");
+  const { createUser, googleLogin, updateNameProfile } =
+    useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
+    setError("");
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-    console.log(name, email, password, photo);
+
     createUser(email, password)
       .then((result) => {
+        updateNameProfile(name, photo);
         const createdUser = result.user;
+        if (createdUser) {
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Register has been successful",
+          });
+        }
         console.log(createUser);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message.slice(22, -2));
       });
+    form.reset();
   };
 
   const handleGoogleLogin = () => {
@@ -32,7 +45,7 @@ const Register = () => {
         console.log(result.user);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message.slice(22, -2));
       });
   };
 
@@ -53,6 +66,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -64,6 +78,7 @@ const Register = () => {
                   type="text"
                   name="email"
                   placeholder="email"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -74,6 +89,7 @@ const Register = () => {
                 <input
                   type="password"
                   name="password"
+                  required
                   placeholder="password"
                   className="input input-bordered"
                 />
@@ -86,8 +102,12 @@ const Register = () => {
                   type="text"
                   name="photo"
                   placeholder="Photo URL "
+                  required
                   className="input input-bordered"
                 />
+                <label className="label">
+                  <span className="label-text text-red-600">{error}</span>
+                </label>
                 <p className="my-2">
                   Already You Have an account ?{" "}
                   <Link to="/login" className="">
@@ -97,7 +117,7 @@ const Register = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn text-black bg-[#ccf7ff] hover:bg-[#aeedf8]"
                   type="submit"
                   value="Register"
                 />

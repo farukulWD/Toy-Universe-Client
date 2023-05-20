@@ -5,27 +5,26 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../Component/Hook/UseTitle";
 
 const Login = () => {
-  useTitle("Login")
-  const location = useLocation()
-  const [error, setError] = useState("Error");
-  const { loginUser,googleLogin } = useContext(AuthContext);
+  useTitle("Login");
+  const location = useLocation();
+  const [error, setError] = useState("");
+  const { loginUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname ||'/';
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
+    setError("");
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-  
-
 
     loginUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
         navigate(from);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message.slice(22, -2)));
   };
 
   const handleGoogleLogin = () => {
@@ -84,7 +83,7 @@ const Login = () => {
 
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn text-black bg-[#ccf7ff] hover:bg-[#aeedf8]"
                   type="submit"
                   value="Login"
                 />

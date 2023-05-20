@@ -35,7 +35,7 @@ const ErrorPage = () => {
           Sorry about that! Please visit our hompage to get where you need to
           go.
         </p>
-        <Link to='/' className="w-full btn lg:w-auto my-4 border rounded-md px-1 sm:px-16  bg-indigo-500 text-black hover:bg-[#ccf7ff] focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">
+        <Link to='/' className="w-full btn lg:w-auto my-4 border rounded-md px-1 sm:px-16  bg-[#ccf7ff] text-black hover:bg-[#aeedf8] focus:outline-none border-none  ">
           Go back to Homepage
         </Link>
       </div>

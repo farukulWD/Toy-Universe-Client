@@ -10,7 +10,7 @@ const AllToyRow = ({toy}) => {
       <td>{sub_category}</td>
       <td>${price}</td>
       <td className="text-center">{available_quantity}pcs</td>
-      <td><Link to={`/toyDetails/${_id}`}>view details</Link></td>
+      <td><Link className="btn bg-[#ccf7ff] text-black focus:outline-none border-none hover:bg-[#aeedf8]" to={`/toyDetails/${_id}`}>view details</Link></td>
     </tr>
   );
 };

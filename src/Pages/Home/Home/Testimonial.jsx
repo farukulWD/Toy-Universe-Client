@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Testimonial = () => {
-    useEffect(() => {
-        AOS.init();
-      }, [])
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <div className="lg:px-20 md:px-6 px-4 py-12">
@@ -14,13 +14,18 @@ const Testimonial = () => {
             Hear from our clients
           </h1>
           <p className="text-base leading-6 mt-4 text-center text-gray-600 2xl:w-2/5 ">
-            Here is why you should trust us with your work achievements
+            Our clients love our toy cars for their exceptional quality,
+            realistic designs, and endless hours of fun they provide.
           </p>
+          <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#ccf7ff]" />
         </div>
-        <div data-aos="flip-up"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="1500" className="w-full lg:flex items-center gap-6 mt-10">
-          <div  className="lg:w-1/2">
+        <div
+          data-aos="flip-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1500"
+          className="w-full lg:flex items-center gap-6 mt-10"
+        >
+          <div className="lg:w-1/2">
             <div className="bg-white border rounded-md border-gray-200 relative sm:p-10 p-6">
               <div>
                 <img
@@ -58,7 +63,7 @@ const Testimonial = () => {
               </div>
             </div>
           </div>
-          <div  className="lg:w-1/2 lg:mt-0 mt-16">
+          <div className="lg:w-1/2 lg:mt-0 mt-16">
             <div className="bg-white border rounded-md border-gray-200 relative sm:p-10 p-6">
               <div>
                 <img

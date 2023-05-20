@@ -9,7 +9,7 @@ const TabCard = ({ product }) => {
   }, [])
   const { _id, name, picture, price, rating } = product;
   return (
-    <div data-aos="fade-up" className="card card-compact w-full  shadow-xl">
+    <div data-aos="fade-up" className="card border-2 border-[#ccf7ff] card-compact w-full  shadow-xl">
       <figure>
         <img className="h-72" src={picture} alt="Shoes" />
       </figure>
@@ -21,7 +21,7 @@ const TabCard = ({ product }) => {
             <p>Rating: {rating}</p>
           </div>
           <div>
-            <Link to={`/toyDetails/${_id}`} className="btn border-none  text-black hover:bg-[#ccf7ff] bg-transparent">View Details</Link>
+            <Link to={`/toyDetails/${_id}`} className="btn border-none  text-black bg-[#ccf7ff] hover:bg-[#aeedf8] ">View Details</Link>
           </div>
         </div>
       </div>

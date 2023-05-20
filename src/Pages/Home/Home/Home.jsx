@@ -9,6 +9,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Testimonial from "./Testimonial";
 import useTitle from "../../../Component/Hook/UseTitle";
+import NewsLater from "./NewsLater";
+import Features from "./Features";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -91,7 +93,7 @@ const Home = () => {
             Here is why you should trust us with your work achievements
           </p>
         </div>
-        <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#fdc600]" />
+        <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#ccf7ff]" />
         <div className="text-center">
           <Tabs
             selectedIndex={tabIndex}
@@ -124,6 +126,11 @@ const Home = () => {
       <div data-aos="zoom-in">
         <Testimonial></Testimonial>
       </div>
+      {/* Features */}
+      <Features></Features>
+
+      {/* News Later section */}
+      <NewsLater></NewsLater>
     </div>
   );
 };

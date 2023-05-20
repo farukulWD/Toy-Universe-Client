@@ -16,7 +16,7 @@ const Gallery = () => {
           Here is why you should trust us with your work achievements
         </p>
       </div>
-      <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#fdc600]" />
+      <hr className="border-y-2 mt-5 w-52 mb-10 mx-auto border-[#ccf7ff]" />
 
       <div className="container mt-10 mx-auto">
         <div className="-m-1 flex flex-wrap md:-m-2">
