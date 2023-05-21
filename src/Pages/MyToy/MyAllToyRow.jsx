@@ -44,10 +44,10 @@ const MyAllToyRow = ({ myToy, control, setControl }) => {
       <td>${price}</td>
       <td>{available_quantity}</td>
       <td>
-        <Link to={`/update/${_id}`}>Update</Link>
+        <Link className="btn bg-[#ccf7ff] text-black focus:outline-none border-none hover:bg-[#aeedf8]" to={`/update/${_id}`}>Update</Link>
       </td>
       <td>
-        <button onClick={() => handleDelete(_id)}>Delete</button>
+        <button className="btn bg-[#ccf7ff] text-black focus:outline-none border-none hover:bg-[#aeedf8]" onClick={() => handleDelete(_id)}>Delete</button>
       </td>
     </tr>
   );
