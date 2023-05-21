@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/carLogo.png";
 import { AuthContext } from "../../Context/AuthProvider";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Menubar = () => {
   const [isHover, setIsHover] = useState(false);
@@ -31,19 +32,19 @@ const Menubar = () => {
           <Link className=" hover:border-b-2 ">Home</Link>
         </li>
         <li>
-          <Link to="/allToy" className=" hover:border-b-2 ">All Toys</Link>
+          <ActiveLink to="/allToy" className=" hover:border-b-2 ">All Toys</ActiveLink>
         </li>
         <li>
-          <Link to='/blog' className=" hover:border-b-2 ">Blogs</Link>
+          <ActiveLink to='/blog' className=" hover:border-b-2 ">Blogs</ActiveLink>
         </li>
         {user && (
           <>
             {" "}
             <li>
-              <Link to="/myToy" className=" hover:border-b-2 ">My Toys</Link>
+              <ActiveLink to="/myToy" className=" hover:border-b-2 ">My Toys</ActiveLink>
             </li>
             <li>
-              <Link to="/addToy" className=" hover:border-b-2 ">Add A Toy</Link>
+              <ActiveLink to="/addToy" className=" hover:border-b-2 ">Add A Toy</ActiveLink>
             </li>
           </>
         )}

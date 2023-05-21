@@ -11,6 +11,7 @@ import Testimonial from "./Testimonial";
 import useTitle from "../../../Component/Hook/UseTitle";
 import NewsLater from "./NewsLater";
 import Features from "./Features";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -21,6 +22,8 @@ const Home = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+
 
   const handleSelect = (index) => {
     setTabIndex(index);
@@ -37,15 +40,19 @@ const Home = () => {
       return;
     }
   };
+  
 
   useEffect(() => {
+    
     fetch(
       `https://the-toy-universe-server.vercel.app/getJobByCategory/${tabValue}`
     )
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
+        setLoading(false)
       });
+      
   }, [tabValue]);
 
   return (
