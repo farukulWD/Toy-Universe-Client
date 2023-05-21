@@ -20,6 +20,20 @@ const Register = () => {
     const password = form.password.value;
     const photo = form.photo.value;
 
+
+    if (!/.{8,}/.test(password)) {
+      setError("At Least 8 charter");
+      return;
+    } else if (!/(?=.*?[0-9])/.test(password)) {
+      setError("At Least one digit");
+      return;
+    } else if (!/(?=.*?[A-Z])/.test(password)) {
+      setError("At least one upper case");
+      return;
+    }
+
+
+
     createUser(email, password)
       .then((result) => {
         updateNameProfile(name, photo);
@@ -31,7 +45,7 @@ const Register = () => {
             text: "Register has been successful",
           });
         }
-        console.log(createUser);
+        
       })
       .catch((error) => {
         setError(error.message.slice(22, -2));
@@ -42,7 +56,7 @@ const Register = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
-        console.log(result.user);
+        
       })
       .catch((error) => {
         setError(error.message.slice(22, -2));

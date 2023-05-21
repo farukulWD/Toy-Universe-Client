@@ -50,7 +50,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        setLoading(false)
+       
       });
       
   }, [tabValue]);

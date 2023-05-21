@@ -108,7 +108,7 @@ const MyToy = () => {
               </tr>
             </thead>
             <tbody>
-              {myAllToy.map((myToy) => (
+              {myAllToy&&myAllToy.map((myToy) => (
                 <MyAllToyRow
                   key={myToy._id}
                   myToy={myToy}

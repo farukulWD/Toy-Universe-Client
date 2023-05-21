@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram,  FaLinkedin, FaSearchLocation, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaSearchLocation,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import logo from "../../../src/assets/carLogo.png";
 
 const Footer = () => {
   return (
@@ -15,7 +23,7 @@ const Footer = () => {
           <a className="link link-hover">Online Shopping</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title">Pages</span>
           <Link to="/" className="link link-hover">
             Home
           </Link>
@@ -25,22 +33,51 @@ const Footer = () => {
           <Link to="/alltoy" className="link link-hover">
             All Toy
           </Link>
+          
+        </div>
+        <div>
+          <span className="footer-title">Company</span>
+          <img className="w-16" src={logo} alt="" />
+
+          <div className="grid grid-flow-col gap-4">
+            <div>
+              <p className="text-xl font-bold">Toy Universe</p>
+            </div>
+          </div>
         </div>
         <div>
           <span className="footer-title">Address</span>
           <div className="grid grid-flow-col gap-4">
-           <div>
-           <p><FaSearchLocation/> Noypara,Madabpur</p>
-            <p><AiOutlineMail/> address@gmail.com</p>
-            <div className="mt-4">
-           <Link className="text-2xl"> <FaFacebook/></Link>
-           <Link className="text-2xl"> <FaTwitter/></Link>
-           <Link className="text-2xl"> <FaYoutube/></Link>
-           <Link className="text-2xl"> <FaInstagram/></Link>
-           <Link className="text-2xl"> <FaLinkedin/></Link>
+            <div>
+              <p>
+                <FaSearchLocation /> Noypara,Madabpur
+              </p>
+              <p>
+                <AiOutlineMail /> address@gmail.com
+              </p>
+              <div className="mt-4">
+                <Link className="text-2xl">
+                  {" "}
+                  <FaFacebook />
+                </Link>
+                <Link className="text-2xl">
+                  {" "}
+                  <FaTwitter />
+                </Link>
+                <Link className="text-2xl">
+                  {" "}
+                  <FaYoutube />
+                </Link>
+                <Link className="text-2xl">
+                  {" "}
+                  <FaInstagram />
+                </Link>
+                <Link className="text-2xl">
+                  {" "}
+                  <FaLinkedin />
+                </Link>
+              </div>
             </div>
-           </div>
-          
           </div>
         </div>
       </div>

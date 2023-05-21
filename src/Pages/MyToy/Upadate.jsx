@@ -35,7 +35,7 @@ const Update = () => {
             text: "Toy added has been successful",
           });
         }
-        console.log(result);
+        
       });
   };
 

@@ -13,12 +13,12 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
-    setError("");
+    
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-
+    setError("");
     loginUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -30,11 +30,13 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
-        console.log(result.user);
+        
+
+        
         navigate(from);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message.slice(22,-2));
       });
   };
 

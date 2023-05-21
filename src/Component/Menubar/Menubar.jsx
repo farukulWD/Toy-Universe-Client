@@ -11,10 +11,10 @@ const Menubar = () => {
   const handleSignOut = () => {
     logOut()
       .then((result) => {
-        console.log(result);
+        
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -32,19 +32,27 @@ const Menubar = () => {
           <Link className=" hover:border-b-2 ">Home</Link>
         </li>
         <li>
-          <ActiveLink to="/allToy" className=" hover:border-b-2 ">All Toys</ActiveLink>
+          <ActiveLink to="/allToy" className=" hover:border-b-2 ">
+            All Toys
+          </ActiveLink>
         </li>
         <li>
-          <ActiveLink to='/blog' className=" hover:border-b-2 ">Blogs</ActiveLink>
+          <ActiveLink to="/blog" className=" hover:border-b-2 ">
+            Blogs
+          </ActiveLink>
         </li>
         {user && (
           <>
             {" "}
             <li>
-              <ActiveLink to="/myToy" className=" hover:border-b-2 ">My Toys</ActiveLink>
+              <ActiveLink to="/myToy" className=" hover:border-b-2 ">
+                My Toys
+              </ActiveLink>
             </li>
             <li>
-              <ActiveLink to="/addToy" className=" hover:border-b-2 ">Add A Toy</ActiveLink>
+              <ActiveLink to="/addToy" className=" hover:border-b-2 ">
+                Add A Toy
+              </ActiveLink>
             </li>
           </>
         )}
