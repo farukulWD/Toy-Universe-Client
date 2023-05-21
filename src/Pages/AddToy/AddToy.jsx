@@ -32,7 +32,7 @@ const AddToy = () => {
             text: "Toy added has been successful",
           });
         }
-        console.log(result);
+        
       });
   };
 
